@@ -1,6 +1,6 @@
 2
 3
-Basic Quiz Test
+Basic Mathematics Quiz
 Team A,Team B,Team C
 10 0 0
 20
