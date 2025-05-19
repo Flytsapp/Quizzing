@@ -1,0 +1,156 @@
+5
+5
+Science Quiz 2025 GMSSSS
+Alpha,Beta,Gamma,Theta,Delta
+10 5 0
+45
+~
+What is the powerhouse of the cell?
+Nucleus
+Ribosome
+>Mitochondria
+Chloroplast
+
+Which gas is most abundant in the Earth's atmosphere?
+Carbon Dioxide
+Oxygen
+Hydrogen
+>Nitrogen
+
+Which part of the human brain is responsible for balance and coordination?
+Cerebrum
+Hypothalamus
+>Pons
+Medulla
+
+What is the unit of electric current?
+>Amperes
+Volts
+Watts
+Ohms
+
+What acid is found in the stomach?
+Lactic Acid
+>Hydrochloric Acid
+Sulfuric Acid
+Acetic Acid
+~
+What law states that every action has an equal and opposite reaction?
+Law of Inertia
+Law of Gravitation
+>Newton's Third Law
+Hooke's Law
+
+Which metal is liquid at room temperature?
+Sodium
+Lead
+>Mercury
+Zinc
+
+What is the SI unit of force?
+Watt
+>Newton
+Joule
+Pascal
+
+What type of lens is used to correct short-sightedness?
+Convex
+>Concave
+Bifocal
+None of the Above
+
+What is the main gas in LPG?
+Methane
+Ethane
+>Butane
+Propane
+~
+Which vitamin is produced when the human body is exposed to sunlight?
+Vitamin A
+Vitamin C
+>Vitamin D
+Vitamin K
+
+Which organ in the human body filters blood?
+Liver
+Heart
+>Lungs
+Kidney
+
+Which part of the plant conducts photosynthesis?
+>Leaf
+Stem
+Root
+Flower
+
+What is the hardest natural substance on Earth?
+Gold
+>Diamond
+Iron
+Quartz
+
+What is the main component of natural gas?
+>Methane
+Butane
+Ethane
+Propane
+~
+Which planet is known as the Red Planet?
+Venus
+>Mars
+Jupiter
+Saturn
+
+Which blood group is known as the universal donor?
+A+
+B+
+>O-
+AB+
+
+What is the boiling point of water on Celsius scale?
+80°C
+>100°C
+90°C
+120°C
+
+How many bones are there in the adult human body?
+>206
+210
+198
+250
+
+Which element is used in thermometers?
+Sodium
+>Mercury
+Zinc
+Aluminum
+~
+Which scientist proposed the theory of relativity?
+Isaac Newton
+Nikola Tesla
+>Albert Einstein
+Galileo Galilei
+
+What is the chemical formula for common salt?
+>NaCl
+KCl
+Na2CO3
+HCl
+
+Which gas turns lime water milky?
+Hydrogen
+>Carbon Dioxide
+Oxygen
+Nitrogen
+
+Which planet has the most moons?
+>Saturn
+Jupiter
+Earth
+Mars
+
+What is the study of heredity and genes called?
+Biology
+Ecology
+>Genetics
+Zoology

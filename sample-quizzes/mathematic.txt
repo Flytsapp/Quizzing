@@ -1,0 +1,42 @@
+2
+3
+Basic Quiz Test
+Team A,Team B,Team C
+10 0 0
+20
+~
+A = 2, B = 3, C = A+B-2, C=?
+2
+>3
+4
+5
+
+Find k if kA = 2, when A = 100
+50
+0.05
+>0.02
+0.2
+
+If n=2, m=3, then n^m - m^n = ?
+1
+0
+>-1
+2
+~
+If a = 1+2+3+5+6+7+...+n, then a=?
+n(n+1)/2
+n(n-1)/2
+>n(n+1)/2 - 4
+(n^2) / 2
+
+If a = 1 - log e + 2 + log e + 3, then a=?
+log e
+log 6
+>6
+log 1
+
+If areas of all faces of a cube is are quadripled, maintaining the geometry, then the the volume is
+increased 4 times
+>increased 8 times
+increased 16 times
+increased 2 times
