@@ -6,6 +6,7 @@ const ccColor = document.getElementById("cc-color");
 const ccSize = document.getElementById("cc-size");
 const ccClear = document.getElementById("cc-clear");
 const ccEraser = document.getElementById("cc-eraser");
+const ccImg = document.getElementById("cc-img");
 const colorInp = document.getElementById("color-inp");
 
 
@@ -49,56 +50,37 @@ const w2c = windowToCanvasCords;
 
 let px = 0, py = 0;
 
-cnv.onmousedown = emd => {
+cnv.onpointerdown = emd => {
     let cnvCords = w2c(emd.clientX, emd.clientY);
     px = cnvCords[0], py = cnvCords[1];
     
     ctx.beginPath();
     ctx.moveTo(px, py);
     
-    onmousemove = emm => {
+    onpointermove = emm => {
         let cnvCords = w2c(emm.clientX, emm.clientY);
         let x = cnvCords[0], y = cnvCords[1];
 
         if(x==px && y==py) return;
+        // console.log(x, y);
 
         ctx.lineTo(x, y);
         ctx.stroke();
     }
 
-    onmouseup = () => {
-        onmousemove = ()=>{}
-        onmouseup = ()=>{}
+    onpointerup = () => {
+        onpointermove = ()=>{}
+        onpointerup = ()=>{}
     }
 
 }
 
-cnv.ontouchstart = emd => {
-    let cnvCords = w2c(emd.touches[0].clientX, emd.touches[0].clientY);
-    px = cnvCords[0], py = cnvCords[1];
-    
-    ctx.beginPath();
-    ctx.moveTo(px, py);
-
-    ontouchmove = emm => {
-        let cnvCords = w2c(emm.touches[0].clientX, emm.touches[0].clientY);
-        let x = cnvCords[0], y = cnvCords[1];
-
-        if(x==px && y==py) return;
-
-        ctx.lineTo(x, y);
-        ctx.stroke();
-    }
-
-    ontouchend = () => {
-        ontouchmove = ()=>{}
-        ontouchend = ()=>{}
-    }
-
-}
 
 // clear canvas
-ccClear.onclick = () => ctx.fillRect(0, 0, 100*cw, 100*ch);
+function clearCanvas(){
+    ctx.fillRect(0, 0, 100*cw, 100*ch);
+}
+ccClear.onclick = clearCanvas;
 
 
 // Color changing
@@ -127,4 +109,28 @@ ccSize.onclick = () => {
 //Eraser
 ccEraser.onclick = () => {
     ctx.strokeStyle = backgroundColor;
+}
+
+//refresh Image
+ccImg.onclick = loadCurrentQuestionImage;
+
+
+//image funtions
+function drawCentralImg(img){
+    let iw = img.width, ih = img.height; // orighinal wh
+    let rw = 0, rh = 0; //required wh
+
+    // width stretch
+    rw = 100 * cw;
+    rh = ih * rw / iw;    
+    if(rh > 100 * ch) {
+        //height stretch
+        rh = 100 * ch;
+        rw = iw * rh / ih;
+    }
+    
+    let x = 100 * cw/2 - rw/2;
+    let y = 100 * ch/2 - rh/2;
+
+    ctx.drawImage(img, x, y, rw, rh);
 }

@@ -203,6 +203,7 @@ html, body{
     height: 100%;
     margin: 0 2.5vh;
     overflow: hidden;
+    touch-action: none;
 }
 
 
@@ -230,7 +231,6 @@ html, body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 }
 
 .cc-btn{
@@ -246,6 +246,12 @@ html, body{
     justify-content: center;
     align-items: center;
     font-size: 3vh;
+    cursor: pointer;
+}
+
+.cc-btn img{
+    cursor: pointer;
+    height: 75%;
 }
 
 .cc-color{
@@ -284,6 +290,13 @@ html, body{
     font-size: 6vh;
 }
 
+.startup-menu{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
 .startup-btn{
     font-size: 6vh;
     background-color: white;
@@ -291,6 +304,9 @@ html, body{
     color: black;
     border-radius: 2vh;
     box-shadow: 0 0 .5vh .5vh #ddd8;
+    margin: 2vh 0;
+    width: fit-content;
+    cursor: pointer;
 }
 
 .file-inp{

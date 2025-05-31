@@ -1,10 +1,14 @@
 const quiz = new Quiz();
 const rankings = new Rankings("ranking-cont", []);
 const timer = new Timer(60, "timer-minutes", "timer-seconds");
+const imagesManager = new ImagesManager();
 const timerElement = document.getElementById("timer");
 const uploadFileBtn = document.getElementById("upload-file");
 const startQuizBtn = document.getElementById("start-quiz");
+const createQuizBtn = document.getElementById("create-quiz-btn");
+const uploadImagesBtn = document.getElementById("upload-images");
 const fileInp = document.getElementById("file-inp");
+const imageInp = document.getElementById("image-inp");
 const startupScreen = document.getElementById("startup-screen");
 const greetsElement = document.getElementById("greets");
 
@@ -15,6 +19,8 @@ const touchDisabler = document.getElementById("touchdisabler");
 
 const fullScrBtn = document.getElementById("fullscr-btn");
 const exitfullScrBtn = document.getElementById("exitfullscr-btn");
+
+let questionImg = null;
 
 
 // Misc functions
@@ -50,6 +56,27 @@ timerElement.onclick = () => {
     timer.toggle();
 }
 
+//Image manager
+imagesManager.attachInput("image-inp");
+uploadImagesBtn.onclick = () => {
+    imageInp.click();
+}
+
+function setQuestionImage(img){
+    questionImg = img;
+    drawCentralImg(img);
+}
+
+function loadCurrentQuestionImage(){
+    clearCanvas();
+    let imgFile = imagesManager.getImageFile(
+        quiz.getCurrentRound(),
+        quiz.getCurrentTeam()
+    );
+    if(!imgFile) return;
+    imagesManager.fileToImage(imgFile, setQuestionImage);
+}
+
 
 //File upload
 uploadFileBtn.onclick = () => {
@@ -60,6 +87,8 @@ quiz.attachFileInput(fileInp);
 quiz.onQuizLoaded.push(()=>{
     uploadFileBtn.style.display = "none";
     startQuizBtn.style.display = "block";
+    createQuizBtn.style.display = "none";
+    uploadImagesBtn.style.display = "block";
 
     rankingsInit();
     timer.setStartTime(quiz.timerStartTime);
@@ -69,6 +98,8 @@ startQuizBtn.onclick = () => {
     startupScreen.style.display = "none";
     timer.start();
     quiz.showQuestion();
+    
+    loadCurrentQuestionImage();
 }
 
 greet();
@@ -89,7 +120,6 @@ quiz.initializeOptionsHover();
 continueBtn.onclick = ()=>{
     
     if(quiz.canContinue() && !quiz.quizEnded){
-        console.log("hello");
         quiz.revealAnswer();
         timer.stop();
         disableTouch();
@@ -114,6 +144,8 @@ continueBtn.onclick = ()=>{
                 quiz.removeReveal();
                 timer.start();
                 enableTouch();
+                
+                loadCurrentQuestionImage();
             }
         };
     
@@ -161,3 +193,8 @@ function restoreScreen(){
 
 fullScrBtn.onclick = fullScreen;
 exitfullScrBtn.onclick = restoreScreen;
+
+//Getting started button
+createQuizBtn.onclick = () => {
+    location.href = createQuizBtn.getAttribute("href");
+}
