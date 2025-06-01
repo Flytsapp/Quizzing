@@ -58,6 +58,7 @@ timerElement.onclick = () => {
 
 //Image manager
 imagesManager.attachInput("image-inp");
+imagesManager.attachLog("upload-images");
 uploadImagesBtn.onclick = () => {
     imageInp.click();
 }

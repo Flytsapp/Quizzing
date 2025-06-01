@@ -2,18 +2,23 @@ class ImagesManager{
 
     images = [];
     inpElement = null;
+    logElement = null;
 
     constructor(){}
 
     attachInput(inpId){
         this.inpElement = document.getElementById(inpId);
         this.inpElement.onchange = e =>{
-            this.processFiles(e.target.files)
+            this.processFiles(e.target.files);
         };
+    }
+    
+    attachLog(logElemId){
+        this.logElement = document.getElementById(logElemId);
     }
 
     processFiles(filesObject){
-
+        
         for (var file of filesObject){
             let filename = file.name.split(".")[0];
             let hyphenSplit = filename.split("-");
@@ -25,6 +30,8 @@ class ImagesManager{
                 } catch {}
             }
         }
+        
+        this.logElement.innerText = `Uploaded ${this.images.length} images`;
 
     }
 
