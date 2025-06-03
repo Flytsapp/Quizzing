@@ -1,15 +1,15 @@
-2
+3
 3
 Basic Mathematics Quiz
 Team A,Team B,Team C
 10 0 0
 20
 ~
-A = 2, B = 3, C = A+B-2, C=?
+A solution of \(3x^2+2x+1=0\)
 2
->3
+3
 4
-5
+>None of the above
 
 Find k if kA = 2, when A = 100
 50
@@ -40,3 +40,21 @@ increased 4 times
 >increased 8 times
 increased 16 times
 increased 2 times
+~
+The mid-point of coordinates, \( ({a \over 2}, {b \over 2}) \) and \( ({p \over 2}, {q \over 2}) \)
+>\( ({{a+p} \over 4}, {{b+q} \over 4}) \)
+\( ({{a+p} \over 2}, {{b+q} \over 2}) \)
+\( ({{a+b} \over 2}, {{p+q} \over 2}) \)
+\( ({{a+b} \over 4}, {{p+q} \over 4}) \)
+
+If \(sin^2 \theta = \frac{1}{2}\) and \(\theta\) be acute, then \(cos \theta = ?\)
+>\( {1} \over {\sqrt{2}} \)
+\( {1} \over {4} \)
+\( {1} \over {2} \)
+\( 30^{\circ} \)
+
+If \( p, q, r \) are consecutive even integers, and \( px^2 + qx - r = 0 \) then \( x = ? \)
+\( {-q \pm \sqrt{5q^{2} - 4}} \over {2q-4} \)
+\( {-q \pm \sqrt{q^{2} - 4pr}} \over {2p} \)
+>\( {-q \pm \sqrt{ ( \sqrt{5}q^{2} - 4 )( \sqrt{5}q^{2} + 4 ) } } \over {2q-4} \)
+\( {-q \pm \sqrt{q^{2} + 4pr}} \over {2q-2} \)

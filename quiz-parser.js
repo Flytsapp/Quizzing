@@ -224,6 +224,8 @@ class Quiz{
 
         this.roundNumberElement.innerText = `${this.currentRound+1}`;
         this.teamNameElement.innerText = `${this.teams[this.currentQuestion]}`;
+
+        MathJax.typeset();
     }
 
     nextQuestion(){
