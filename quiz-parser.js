@@ -9,6 +9,8 @@ class Quiz{
     questionElement = null;
     optionElements = [null, null, null, null];
     skipBtn = null;
+    headerElement = null;
+    questionContainerElement = null;
 
     currentRound = 0;
     currentQuestion = 0;
@@ -54,6 +56,12 @@ class Quiz{
             this.roundNumberElement.innerText = `${this.currentRound+1}`;
             this.teamNameElement.innerText = `${this.teams[this.currentQuestion]}`;
         }
+    }
+    setHeaderElement(id){
+        this.headerElement = document.getElementById(id);
+    }
+    setQuestionContainerElement(id){
+        this.questionContainerElement = document.getElementById(id);
     }
 
     initializeOptionsHover(){
@@ -110,6 +118,36 @@ class Quiz{
         else if (this.selected==4) return 0;
         else return -1;
     }
+
+    resizeQuestionToFit(){
+        let headerBottom = 
+            this.headerElement.offsetTop + this.headerElement.offsetHeight;
+            
+        let questionFontSize = 5;
+        let optionRatio = 4/5;
+        let optionFontSize = 4;
+        let linearDecrement = .5;
+        let geometricDecrement = 2;
+        
+        while(headerBottom > this.questionContainerElement.offsetTop){
+            
+            if(questionFontSize > linearDecrement) questionFontSize-=linearDecrement;
+            else questionFontSize/=geometricDecrement;
+            
+            optionFontSize = questionFontSize * optionRatio;
+            
+            this.questionElement.style.fontSize = `${questionFontSize}vh`;
+            
+            for(var optEl of this.optionElements){
+                optEl.parentElement.style.fontSize = `${optionFontSize}vh`;
+            }
+            this.skipBtn.style.fontSize = `${optionFontSize}vh`;
+
+            headerBottom = 
+                this.headerElement.offsetTop + this.headerElement.offsetHeight;
+        }
+    }
+
 
     getCurrentTeam(){
         return this.currentQuestion;
@@ -226,6 +264,7 @@ class Quiz{
         this.teamNameElement.innerText = `${this.teams[this.currentQuestion]}`;
 
         MathJax.typeset();
+        this.resizeQuestionToFit();
     }
 
     nextQuestion(){

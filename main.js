@@ -111,6 +111,8 @@ quiz.setPageTitleElement("header-title");
 quiz.setTopBarElements("round-number", "team-name");
 quiz.setQuestionElement("question-text");
 quiz.setOptionElements("option1", "option2", "option3", "option4", "skip");
+quiz.setHeaderElement("header");
+quiz.setQuestionContainerElement("question-cont");
 
 
 //Options hover
